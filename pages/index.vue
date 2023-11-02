@@ -1,10 +1,8 @@
 <script setup>
-import { ref, reactive, onUpdated, computed, watch } from 'vue';
+import { ref, reactive, onUpdated, computed } from 'vue';
 const count = ref(0);
 const state = reactive({ count: 0 });
 const src = 'https://picsum.photos/200/300';
-const x = ref(0);
-const y = ref(0);
 
 onUpdated(() => {
     console.log(count.value);
@@ -28,16 +26,18 @@ let users = [
     { name: 'Jack', age: 25 },
 ];
 
-watch(x, (newX) => {
-    console.log(newX);
-});
-
 </script>
 
 <template>
     <AppInfos>
         <p>Contenu</p>
     </AppInfos>
+
+    <NuxtLink to="/page-1">
+        Page 1
+    </NuxtLink>
+
+    <a href="/page-1">Page 1</a>
 
     <PropComponent title="Titre" />
 
