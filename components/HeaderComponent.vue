@@ -43,6 +43,7 @@ header nav ul {
 
 header nav ul li a {
     text-decoration: none;
+    text-transform: uppercase;
     color: black;
 }
 

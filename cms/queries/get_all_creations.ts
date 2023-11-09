@@ -1,5 +1,5 @@
 export default gql
-    `query get_creations {
+    `query get_all_creations {
     allCreations(orderBy: _createdAt_DESC) {
       id
       title
