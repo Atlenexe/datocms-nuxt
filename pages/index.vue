@@ -1,15 +1,15 @@
 <script setup>
-console.log('test');
+import blog_post from '@/cms/queries/blog_post'
+const { data: blogData, pending: blogPending, error: blogError, refresh: blogRefresh } = await useLazyAsyncQuery(blog_post);
+console.log(blogData);
 </script>
 
 <template>
-    <NuxtLink to="/page-1">
-        Page 1
-    </NuxtLink>
-
     <a href="/page-1">Page 1</a>
-
-    <PropComponent title="Titre" />
+    <div v-for="article in blogData.allArticles">
+        <h2>{{ article.title }}</h2>
+        {{ article.content }}
+    </div>
 </template>
 
 <style scoped></style>
