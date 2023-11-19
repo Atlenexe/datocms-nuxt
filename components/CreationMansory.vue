@@ -5,7 +5,7 @@ defineProps({
 
 <template>
     <div class="masonry">
-        <Creation v-for="creation in data.allCreations" :title="creation.title" :img="creation.img.url" />
+        <Creation v-for="creation in data" :title="creation.title" :img="creation.img.url" />
     </div>
 </template>
 
