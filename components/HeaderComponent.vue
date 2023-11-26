@@ -28,26 +28,30 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
 </template>
 
 <style scoped>
-.top h1 {
-    text-align: center;
-    text-transform: uppercase;
-}
+header {
+    .top h1 {
+        text-align: center;
+        text-transform: uppercase;
+    }
 
-header nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    gap: calc(var(--unit) * 16);
-}
+    nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: calc(var(--unit) * 16);
 
-header nav ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: black;
-}
+        li {
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: black;
 
-header nav ul li a:hover {
-    text-decoration: underline;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 </style>
