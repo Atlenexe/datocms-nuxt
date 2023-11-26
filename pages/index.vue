@@ -8,5 +8,5 @@ creationsData._value.allCreations ? creations = creationsData._value.allCreation
 </script>
 
 <template>
-    <CreationMansory v-if="creations.length > 0" :data="creations" />
+    <CreationMansory :data="creations" />
 </template>
