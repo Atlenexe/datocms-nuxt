@@ -1,1 +1,18 @@
-<template></template>
+<script setup>
+import get_contact_page from '@/cms/queries/get_contact_page'
+const { data: pageData, pending: pagePending, error: pageError, refresh: pageRefresh } = await useLazyAsyncQuery(get_contact_page);
+
+let pageContent = pageData._value.contactPage ? pageData._value.contactPage : null;
+</script>
+
+<template>
+    <div>
+        <div v-html="pageContent.content"></div>
+        <ul>
+            <li v-for="contact in pageContent.contacts">
+                <a v-if="!contact.isEmail" :href="contact.contactContent" >{{ contact.contactType }}</a>
+                <a v-else :href="'mailto:' + contact.contactContent" >{{ contact.contactType }}</a>
+            </li>
+        </ul>
+    </div>
+</template>
