@@ -9,7 +9,7 @@ defineProps({
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .masonry {
     column-count: 3;
     column-gap: var(--masonry-gap);

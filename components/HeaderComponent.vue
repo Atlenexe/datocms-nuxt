@@ -27,7 +27,7 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
     </header>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 header {
     .top h1 {
         text-align: center;
