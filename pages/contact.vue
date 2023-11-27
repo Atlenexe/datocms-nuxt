@@ -10,8 +10,9 @@ let pageContent = pageData._value.contactPage ? pageData._value.contactPage : nu
         <div v-html="pageContent.content"></div>
         <ul>
             <li v-for="contact in pageContent.contacts">
-                <a v-if="!contact.isEmail" :href="contact.contactContent" >{{ contact.contactType }}</a>
-                <a v-else :href="'mailto:' + contact.contactContent" >{{ contact.contactType }}</a>
+                <a :href="contact.isEmail ? 'mailto:' + contact.contactContent : contact.contactContent">
+                    {{ contact.contactType }}
+                </a>
             </li>
         </ul>
     </div>
