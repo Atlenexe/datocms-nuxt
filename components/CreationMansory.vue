@@ -5,11 +5,11 @@ defineProps({
 
 <template>
     <div class="masonry">
-        <Creation v-for="creation in data.allCreations" :title="creation.title" :img="creation.img.url" />
+        <Creation v-for="creation in data" :title="creation.title" :img="creation.img.url" />
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .masonry {
     column-count: 3;
     column-gap: var(--masonry-gap);
