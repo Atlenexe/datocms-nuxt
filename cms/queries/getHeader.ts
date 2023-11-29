@@ -7,7 +7,7 @@ export default gql
           contactType
           contactContent
         }
-        tags {
+        categories {
           name
           route
         }

@@ -10,8 +10,8 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
         </div>
         <nav>
             <ul>
-                <li v-for="tag in headerData.header.tags">
-                    <a :href="'/creations/' + tag.route">{{ tag.name }}</a>
+                <li v-for="category in headerData.header.categories">
+                    <a :href="'/creations/' + category.route">{{ category.name }}</a>
                 </li>
                 <li>
                     <a href="/">Accueil</a>
