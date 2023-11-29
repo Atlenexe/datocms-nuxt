@@ -1,6 +1,6 @@
 <script setup>
-import get_header from '@/cms/queries/get_header'
-const { data: headerData, pending: headerPending, error: headerError, refresh: headerRefresh } = await useLazyAsyncQuery(get_header);
+import getHeader from '@/cms/queries/getHeader'
+const { data: headerData, pending: headerPending, error: headerError, refresh: headerRefresh } = await useLazyAsyncQuery(getHeader);
 </script>
 
 <template>

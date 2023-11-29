@@ -1,5 +1,5 @@
 export default gql
-    `query get_header {
+    `query getHeader {
         header {
         id
         title

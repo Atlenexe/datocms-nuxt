@@ -1,6 +1,6 @@
 <script setup>
-import get_contact_page from '@/cms/queries/get_contact_page'
-const { data: pageData, pending: pagePending, error: pageError, refresh: pageRefresh } = await useLazyAsyncQuery(get_contact_page);
+import getContactPage from '@/cms/queries/getContactPage'
+const { data: pageData, pending: pagePending, error: pageError, refresh: pageRefresh } = await useLazyAsyncQuery(getContactPage);
 
 let pageContent = pageData._value.contactPage ? pageData._value.contactPage : null;
 </script>

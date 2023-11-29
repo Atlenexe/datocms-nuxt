@@ -1,5 +1,5 @@
 export default gql
-    `query get_contact_page {
+    `query getContactPage {
     contactPage {
       contacts {
         isEmail
