@@ -1,6 +1,6 @@
 <script setup>
-import getcategoryFromName from '@/cms/variables/getCategoryFromName'
-import getCreationsFromcategory from '@/cms/variables/getCreationsFromCategory'
+import getcategoryFromName from '@/cms/variables/getCategoryFromName';
+import getCreationsFromcategory from '@/cms/variables/getCreationsFromCategory';
 
 const route = useRoute();
 const categoryRoute = route.params.category;
@@ -24,12 +24,13 @@ if (!categoryError.value && categoryData?.value?.category) {
 </script>
 
 <template>
-  <div v-if="category">
+  <section v-if="category">
     <h2>{{ categoryName }}</h2>
     <CreationMasonry v-if="creations.length > 0" :data="creations" />
     <p v-else>Aucune création trouvée.</p>
-  </div>
-  <div v-else>
+  </section>
+
+  <section v-else>
     <p>Page introuvable</p>
-  </div>
+  </section>
 </template>

@@ -10,5 +10,6 @@ export default gql
       img {
         url
       }
+      creationDate
     }
   }`;

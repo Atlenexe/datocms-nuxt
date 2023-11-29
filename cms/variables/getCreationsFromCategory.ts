@@ -10,5 +10,6 @@ export default gql
         name
         route
       }
+      creationDate
     }
   }`;
