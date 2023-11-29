@@ -2,6 +2,7 @@
 defineProps({
     title: String,
     img: String,
+    alt: String,
     creationDate: String,
 });
 
@@ -22,7 +23,7 @@ function formatDate(date) {
 
 <template>
     <div class="image">
-        <img :src="img" alt="">
+        <img :src="img" :alt="alt">
         <div class="details">
             <span>{{ title }}</span>
             <span>{{ formatDate(creationDate) }}</span>

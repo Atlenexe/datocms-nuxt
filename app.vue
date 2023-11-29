@@ -1,3 +1,24 @@
+<script setup>
+import getSeo from '@/cms/queries/getSeo.ts';
+
+const { data: seoData, pending: seoPending, error: seoError, refresh: seoRefresh } = await useLazyAsyncQuery(getSeo);
+
+if (seoData.value._site) {
+  const seoContent = seoData.value._site;
+  const title = seoContent.globalSeo.siteName;
+  const description = seoContent.globalSeo.fallbackSeo.description;
+  const locales = seoContent.locales;
+
+  useSeoMeta({
+    title: title,
+    ogTitle: title,
+    description: description,
+    ogDescription: description,
+    locales: locales,
+  });
+}
+</script>
+
 <template>
   <NuxtLayout />
 </template>

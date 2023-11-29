@@ -9,6 +9,7 @@ export default gql
       title
       img {
         url
+        alt
       }
       creationDate
     }

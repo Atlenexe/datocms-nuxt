@@ -6,7 +6,7 @@ defineProps({
 
 <template>
     <div class="masonry">
-        <Creation v-for="creation in data" :title="creation.title" :img="creation.img.url" :creationDate="creation.creationDate" />
+        <Creation v-for="creation in data" :title="creation.title" :img="creation.img.url" :alt="creation.img.alt" :creationDate="creation.creationDate" />
     </div>
 </template>
 

@@ -5,6 +5,7 @@ export default gql
       title
       img {
         url
+        alt
       }
       category {
         name
