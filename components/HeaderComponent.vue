@@ -1,17 +1,15 @@
 <script setup>
-import get_header from '@/cms/queries/get_header'
-const { data: headerData, pending: headerPending, error: headerError, refresh: headerRefresh } = await useLazyAsyncQuery(get_header);
+import getHeader from '@/cms/queries/getHeader'
+const { data: headerData, pending: headerPending, error: headerError, refresh: headerRefresh } = await useLazyAsyncQuery(getHeader);
 </script>
 
 <template>
     <header>
-        <div class="top">
-            <h1>{{ headerData.header.title }}</h1>
-        </div>
+        <h1>{{ headerData.header.title }}</h1>
         <nav>
             <ul>
-                <li v-for="tag in headerData.header.tags">
-                    <a :href="'/creations/' + tag.route">{{ tag.name }}</a>
+                <li v-for="category in headerData.header.categories">
+                    <a :href="'/creations/' + category.route">{{ category.name }}</a>
                 </li>
                 <li>
                     <a href="/">Accueil</a>
@@ -29,27 +27,17 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
 
 <style scoped lang="scss">
 header {
-    .top h1 {
-        text-align: center;
-        text-transform: uppercase;
-    }
+    margin-bottom: calc(var(--unit) * 16);
 
     nav ul {
         display: flex;
         justify-content: center;
         align-items: center;
-        list-style: none;
-        gap: calc(var(--unit) * 16);
+        gap: var(--navbar-gap);
 
         li {
             a {
-                text-decoration: none;
                 text-transform: uppercase;
-                color: black;
-
-                &:hover {
-                    text-decoration: underline;
-                }
             }
         }
     }

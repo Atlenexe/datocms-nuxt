@@ -1,6 +1,7 @@
 export default gql
-    `query get_about_page {
+    `query getAboutPage {
         aboutPage {
+            title
             content(markdown: true)
         }
     }`;

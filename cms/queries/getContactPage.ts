@@ -1,11 +1,12 @@
 export default gql
-    `query get_contact_page {
+    `query getContactPage {
     contactPage {
+      title
+      content(markdown: true)
       contacts {
         isEmail
         contactContent
         contactType
       }
-      content(markdown: true)
     }
   }`;

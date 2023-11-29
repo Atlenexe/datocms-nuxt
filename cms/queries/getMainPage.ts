@@ -1,10 +1,15 @@
 export default gql
-    `query get_all_creations {
+  `query getMainPage {
+    mainPage {
+      title
+    }
+      
     allCreations(orderBy: _createdAt_DESC) {
       id
       title
       img {
         url
       }
+      creationDate
     }
   }`;

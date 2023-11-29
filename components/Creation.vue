@@ -2,13 +2,31 @@
 defineProps({
     title: String,
     img: String,
+    creationDate: String,
 });
+
+function formatDate(date) {
+    if (date) {
+        const dateArray = date.split("-");
+        const day = dateArray[2];
+        const month = dateArray[1];
+        const year = dateArray[0];
+
+        return `${day}/${month}/${year}`;
+    } else {
+        return "";
+    }
+}
+
 </script>
 
 <template>
     <div class="image">
         <img :src="img" alt="">
-        <span>{{ title }}</span>
+        <div class="details">
+            <span>{{ title }}</span>
+            <span>{{ formatDate(creationDate) }}</span>
+        </div>
     </div>
 </template>
 
@@ -24,7 +42,7 @@ defineProps({
         transition: transform .1s ease-in-out;
     }
 
-    span {
+    .details {
         display: none;
         padding: calc(var(--unit) * 2);
     }
@@ -35,8 +53,9 @@ defineProps({
             cursor: zoom-in;
         }
 
-        >span {
-            display: block;
+        >.details {
+            display: flex;
+            flex-direction: column;
             position: absolute;
             bottom: 0;
             color: white;

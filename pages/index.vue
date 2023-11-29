@@ -1,12 +1,18 @@
 <script setup>
-import get_all_creations from '@/cms/queries/get_all_creations'
-const { data: creationsData, pending: creationsPending, error: creationsError, refresh: creationsRefresh } = await useLazyAsyncQuery(get_all_creations);
+import getMainPage from '@/cms/queries/getMainPage.ts';
 
 let creations = [];
+let title = "";
 
-creationsData._value.allCreations ? creations = creationsData._value.allCreations : null;
+const { data: creationsData, pending: creationsPending, error: creationsError, refresh: creationsRefresh } = await useLazyAsyncQuery(getMainPage);
+
+creationsData.value.allCreations ? creations = creationsData.value.allCreations : null;
+creationsData.value.mainPage ? title = creationsData.value.mainPage.title : null;
 </script>
 
 <template>
-    <CreationMansory :data="creations" />
+    <section>
+        <h2>{{ title }}</h2>
+        <CreationMasonry :data="creations" />
+    </section>
 </template>

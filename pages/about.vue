@@ -1,12 +1,16 @@
 <script setup>
-import get_about_page from '@/cms/queries/get_about_page'
-const { data: pageData, pending: pagePending, error: pageError, refresh: pageRefresh } = await useLazyAsyncQuery(get_about_page);
+import getAboutPage from '@/cms/queries/getAboutPage';
 
-let pageContent = pageData._value.aboutPage ? pageData._value.aboutPage : null;
+const { data: pageData, pending: pagePending, error: pageError, refresh: pageRefresh } = await useLazyAsyncQuery(getAboutPage);
+
+const pageContent = pageData._value.aboutPage ? pageData._value.aboutPage : null;
 </script>
 
 <template>
-    <div>
-        <div v-html="pageContent.content"></div>
+    <div v-if="pageContent">
+        <Section>
+            <h2>{{ pageContent.title }}</h2>
+            <div v-html="pageContent.content"></div>
+        </Section>
     </div>
 </template>
