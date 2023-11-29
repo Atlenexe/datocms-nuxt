@@ -32,5 +32,13 @@ if (!categoryError.value && categoryData?.value?.category) {
 
   <section v-else>
     <p>Page introuvable</p>
+    <a href="/">Retour à l'accueil</a>
   </section>
 </template>
+
+<style scoped lang="scss">
+p,
+a {
+  text-align: center;
+}
+</style>

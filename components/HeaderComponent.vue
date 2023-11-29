@@ -9,7 +9,7 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
         <nav>
             <ul>
                 <li v-for="category in headerData.header.categories">
-                    <a :href="'/creations/' + category.route">{{ category.name }}</a>
+                    <a :href="'/category/' + category.route">{{ category.name }}</a>
                 </li>
                 <li>
                     <a href="/">Accueil</a>
