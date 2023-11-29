@@ -1,8 +1,10 @@
 <script setup>
 import getContactPage from '@/cms/queries/getContactPage';
 
+//Requête pour récupérer le contenu de la page Contact
 const { data: pageData, pending: pagePending, error: pageError, refresh: pageRefresh } = await useLazyAsyncQuery(getContactPage);
 
+//Récupération du contenu de la page
 const pageContent = pageData._value.contactPage ? pageData._value.contactPage : null;
 </script>
 

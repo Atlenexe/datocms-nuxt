@@ -6,13 +6,18 @@ defineProps({
     creationDate: String,
 });
 
-function formatDate(date) {
+//Fonction pour reformater la date
+function reformatDate(date) {
+    //Si la date est renseignée
     if (date) {
+        //On la découpe pour récupérer le jour, le mois et l'année depuis une date au format année-mois-jour
         const dateArray = date.split("-");
+
         const day = dateArray[2];
         const month = dateArray[1];
         const year = dateArray[0];
 
+        //On retourne la date au format jour/mois/année
         return `${day}/${month}/${year}`;
     } else {
         return "";
@@ -26,7 +31,7 @@ function formatDate(date) {
         <img :src="img" :alt="alt">
         <div class="details">
             <span>{{ title }}</span>
-            <span>{{ formatDate(creationDate) }}</span>
+            <span>{{ reformatDate(creationDate) }}</span>
         </div>
     </div>
 </template>
