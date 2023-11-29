@@ -26,7 +26,7 @@ if (!categoryError.value && categoryData?.value?.category) {
 <template>
   <div v-if="category">
     <h2>{{ categoryName }}</h2>
-    <CreationMansory v-if="creations.length > 0" :data="creations" />
+    <CreationMasonry v-if="creations.length > 0" :data="creations" />
     <p v-else>Aucune création trouvée.</p>
   </div>
   <div v-else>
