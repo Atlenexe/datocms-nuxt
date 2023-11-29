@@ -11,5 +11,5 @@ creationsData.value.mainPage ? title = creationsData.value.mainPage.title : null
 
 <template>
     <h2>{{ title }}</h2>
-    <CreationMansory :data="creations" />
+    <CreationMasonry :data="creations" />
 </template>

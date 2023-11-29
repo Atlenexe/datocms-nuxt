@@ -46,7 +46,7 @@ h1 {
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 28px;
   margin: var(--h2-margin);
 }
 
