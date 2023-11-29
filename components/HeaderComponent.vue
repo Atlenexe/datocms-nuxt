@@ -5,9 +5,7 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
 
 <template>
     <header>
-        <div class="top">
-            <h1>{{ headerData.header.title }}</h1>
-        </div>
+        <h1>{{ headerData.header.title }}</h1>
         <nav>
             <ul>
                 <li v-for="category in headerData.header.categories">
@@ -29,27 +27,17 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
 
 <style scoped lang="scss">
 header {
-    .top h1 {
-        text-align: center;
-        text-transform: uppercase;
-    }
+    margin-bottom: calc(var(--unit) * 16);
 
     nav ul {
         display: flex;
         justify-content: center;
         align-items: center;
-        list-style: none;
-        gap: calc(var(--unit) * 16);
+        gap: var(--navbar-gap);
 
         li {
             a {
-                text-decoration: none;
                 text-transform: uppercase;
-                color: black;
-
-                &:hover {
-                    text-decoration: underline;
-                }
             }
         }
     }

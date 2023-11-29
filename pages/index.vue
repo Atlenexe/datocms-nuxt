@@ -1,12 +1,15 @@
 <script setup>
-import getAllCreations from '@/cms/queries/getAllCreations'
-const { data: creationsData, pending: creationsPending, error: creationsError, refresh: creationsRefresh } = await useLazyAsyncQuery(getAllCreations);
+import getMainPage from '@/cms/queries/getMainPage.ts'
+const { data: creationsData, pending: creationsPending, error: creationsError, refresh: creationsRefresh } = await useLazyAsyncQuery(getMainPage);
 
 let creations = [];
+let title = "";
 
-creationsData._value.allCreations ? creations = creationsData._value.allCreations : null;
+creationsData.value.allCreations ? creations = creationsData.value.allCreations : null;
+creationsData.value.mainPage ? title = creationsData.value.mainPage.title : null;
 </script>
 
 <template>
+    <h2>{{ title }}</h2>
     <CreationMansory :data="creations" />
 </template>

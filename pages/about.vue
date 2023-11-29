@@ -6,7 +6,10 @@ let pageContent = pageData._value.aboutPage ? pageData._value.aboutPage : null;
 </script>
 
 <template>
-    <div>
-        <div v-html="pageContent.content"></div>
+    <div v-if="pageContent">
+        <Section>
+            <h2>{{ pageContent.title }}</h2>
+            <div v-html="pageContent.content"></div>
+        </Section>
     </div>
 </template>

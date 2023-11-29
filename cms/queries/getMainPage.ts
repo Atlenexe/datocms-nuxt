@@ -1,5 +1,9 @@
 export default gql
-    `query getAllCreations {
+  `query getMainPage {
+    mainPage {
+      title
+    }
+      
     allCreations(orderBy: _createdAt_DESC) {
       id
       title
