@@ -6,7 +6,7 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
 </script>
 
 <template>
-    <header>
+    <header  v-if="!headerError && headerData">
         <h1>{{ headerData.header.title }}</h1>
         <nav>
             <ul>

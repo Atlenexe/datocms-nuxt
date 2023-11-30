@@ -30,6 +30,8 @@ if (seoContent) {
 
   --h1-margin: calc(var(--unit) * 10) 0;
   --h2-margin: calc(var(--unit) * 8) 0;
+  
+  --footer-margin: calc(var(--unit) * 12) 0;
 
   --section-s: 0 calc(var(--unit) * 16);
   --section-m: 0 calc(var(--unit) * 32);
