@@ -6,8 +6,16 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
 </script>
 
 <template>
-    <header  v-if="!headerError && headerData">
-        <h1>{{ headerData.header.title }}</h1>
+    <header v-if="!headerError && headerData">
+        <div class="top">
+            <h1>{{ headerData.header.title }}</h1>
+
+            <div class="contacts">
+                <a v-for="contact in headerData.header.contact" target="_blank"
+                    :href="contact.isEmail ? 'mailto:' + contact.contactContent : contact.contactContent">{{
+                        contact.contactType }}</a>
+            </div>
+        </div>
         <nav>
             <ul>
                 <li v-for="category in headerData.header.categories">
@@ -30,6 +38,19 @@ const { data: headerData, pending: headerPending, error: headerError, refresh: h
 <style scoped lang="scss">
 header {
     margin-bottom: calc(var(--unit) * 16);
+
+    .top {
+        position: relative;
+
+        >.contacts {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            gap: var(--navbar-contacts-gap);
+            margin-right: var(--navbar-contacts-margin);
+        }
+    }
 
     nav ul {
         display: flex;

@@ -38,6 +38,8 @@ if (seoContent) {
   --section-l: 0 calc(var(--unit) * 40);
 
   --navbar-gap: calc(var(--unit) * 16);
+  --navbar-contacts-gap: calc(var(--unit) * 8);
+  --navbar-contacts-margin: calc(var(--unit) * 8);
   --masonry-gap: calc(var(--unit) * 3);
 }
 
