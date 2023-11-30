@@ -5,6 +5,7 @@ export default gql
         contact {
           contactType
           contactContent
+          isEmail
         }
         categories {
           name
